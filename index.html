@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANINA Perú | Catálogo Premium</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fuentes e Íconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="logo">ANINA</div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#espacios">Espacios</a></li>
+                <li><a href="#novedades">productos</a></li>
+                <li><a href="#showrooms">Showrooms</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="https://wa.me/51949272258?text=Hola,%20vengo%20de%20la%20página%20web%20y%20quisiera%20pedir%20un%20presupuesto." class="btn-cotiza">Cotizar Ahora</a></li>
+            </ul>
+
+            <a href="#" class="lang-toggle">ES / EN</a>
+        </div>
+    </nav>
+
+    <!-- MENÚ LATERAL (Móvil) -->
+    <div class="sidebar" id="sidebar">
+        <ul class="sidebar-links">
+            <li><a href="#espacios">Espacios</a></li>
+            <li><a href="#novedades">productos</a></li>
+            <li><a href="#showrooms">Showrooms</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="#cotiza" class="btn-cotiza-sidebar">Cotizar Ahora</a>
+        </div>
+    </div>
+
+    <!-- PORTADA DINÁMICA -->
+    <header id="hero">
+        <div id="hero-bg-1" class="hero-bg active"></div>
+        <div id="hero-bg-2" class="hero-bg"></div> 
+
+        <div class="hero-content">
+            <h1>Acabados Arquitectónicos</h1>
+            <h2>Revestimiento de paredes y techos para tus proyectos corporativos y residenciales</h2>
+        </div>
+    </header>
+
+    
+
+    <!-- SECCIÓN NOVEDADES (Estilo Editorial Premium) -->
+    <section id="novedades" class="seccion-novedades">
+        
+        <!-- Cabecera con línea de progreso y flechas -->
+        <div class="novedades-header">
+            <div class="novedades-titulo-link">
+                PRODUCTOS <span class="flecha-diagonal">&#8600;</span>
+            </div>
+            
+            <div class="novedades-controles">
+                <div class="progreso-wrapper">
+                    <span id="contador-novedades">01/04</span>
+                    <div class="barra-fondo">
+                        <div class="barra-activa" id="barra-progreso"></div>
+                    </div>
+                </div>
+                <div class="flechas-navegacion">
+                    <button id="prev-novedades" class="btn-flecha"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button id="next-novedades" class="btn-flecha"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrusel de Tarjetas -->
+        <div class="carrusel-novedades" id="carrusel-novedades">
+            
+        <!-- Tarjeta 1: MINOFLEX -->
+            <!-- ¡NUEVO! Todo envuelto en un enlace -->
+            <a href="BELBIEN.html" class="novedad-item" style="text-decoration: none; color: inherit;">
+                <img src="imagenes/imagen1.jpg" alt="Minoflex" class="img-novedad">
+                <div class="novedad-overlay">
+                    <div class="novedad-top">
+                        <span class="novedad-marca">BELBIEN</span>
+                        <h3 class="novedad-titulo">Impresionantes láminas vinil<br>fáciles de limpiar, adaptables y sostenibles.</h3>
+                    </div>
+                    <div class="novedad-bottom">
+                        <div class="btn-mas">+</div> <!-- Le quité la etiqueta button para que no interfiera con el enlace <a> -->
+                    </div>
+                </div>
+            </a>
+
+            <!-- Tarjeta 2: MINOFLEX -->
+            <!-- ¡NUEVO! Todo envuelto en un enlace -->
+            <a href="MIRROFLEX.html" class="novedad-item" style="text-decoration: none; color: inherit;">
+                <img src="imagenes/MIRROFLEX/mirroflex8.jpg" alt="Minoflex" class="img-novedad">
+                <div class="novedad-overlay">
+                    <div class="novedad-top">
+                        <span class="novedad-marca">Mirroflex</span>
+                        <h3 class="novedad-titulo">Paneles 3D de textura profunda<br>ideales para paredes, techos y columnas</h3>
+                    </div>
+                    <div class="novedad-bottom">
+                        <div class="btn-mas">+</div> <!-- Le quité la etiqueta button para que no interfiera con el enlace <a> -->
+                    </div>
+                </div>
+            </a>
+
+            <!-- Tarjeta 3: MINOFLEX -->
+            <!-- ¡NUEVO! Todo envuelto en un enlace -->
+            <a href="PIEDRA.html" class="novedad-item" style="text-decoration: none; color: inherit;">
+                <img src="imagenes/imagen3.jpg" alt="Minoflex" class="img-novedad">
+                <div class="novedad-overlay">
+                    <div class="novedad-top">
+                        <span class="novedad-marca">Piedra</span>
+                        <h3 class="novedad-titulo">Piedra natural ligero y resistente<br>Flexibilidad manteniendo el peso al mínimo.</h3>
+                    </div>
+                    <div class="novedad-bottom">
+                        <div class="btn-mas">+</div> <!-- Le quité la etiqueta button para que no interfiera con el enlace <a> -->
+                    </div>
+                </div>
+            </a>
+
+            <!-- Tarjeta 4: MINOFLEX -->
+            <!-- ¡NUEVO! Todo envuelto en un enlace -->
+            <a href="LEN-TEX.html" class="novedad-item" style="text-decoration: none; color: inherit;">
+                <img src="imagenes/BELBIEN/belbien3.jpg" alt="Minoflex" class="img-novedad">
+                <div class="novedad-overlay">
+                    <div class="novedad-top">
+                        <span class="novedad-marca">Len-Tex</span>
+                        <h3 class="novedad-titulo">líder de revestimientos murales vinílicos de uso multiple<br>Fabricados en EE. UU</h3>
+                    </div>
+                    <div class="novedad-bottom">
+                        <div class="btn-mas">+</div> <!-- Le quité la etiqueta button para que no interfiera con el enlace <a> -->
+                    </div>
+                </div>
+            </a>
+
+
+            <!-- Tarjeta 5: MINOFLEX -->
+            <!-- ¡NUEVO! Todo envuelto en un enlace -->
+            <a href="CORCHO-RAFFIA.html" class="novedad-item" style="text-decoration: none; color: inherit;">
+                <img src="imagenes/BELBIEN/belbien8.jpg" alt="Minoflex" class="img-novedad">
+                <div class="novedad-overlay">
+                    <div class="novedad-top">
+                        <span class="novedad-marca">Corcho-Raffia</span>
+                        <h3 class="novedad-titulo">Texturas naturales como nunca antes<br>Elaborada por expertos artesanos</h3>
+                    </div>
+                    <div class="novedad-bottom">
+                        <div class="btn-mas">+</div> <!-- Le quité la etiqueta button para que no interfiera con el enlace <a> -->
+                    </div>
+                </div>
+            </a>
+
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN SHOWROOMS -->
+    <section id="showrooms" class="seccion-showrooms">
+        <div class="showrooms-header">
+            <h2>GALERÍAS DE INSPIRACIÓN</h2>
+            <button id="btn-toggle-vista" class="btn-vista">Ver en modo Feed</button>
+        </div>
+
+        <div id="contenedor-showrooms" class="vista-mosaico">
+            
+            <div class="showroom-item"><img src="imagenes/3DWALL/3D19.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/3DWALL/3D1.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/BELBIEN/belbien6.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/LEN-TEX/lentex15.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/LEN-TEX/lentex14.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/MIRROFLEX/mirroflex5.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/MIRROFLEX/mirroflex6.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/PIEDRA/piedra12.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/PIEDRA/piedra11.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/LEN-TEX/lentex12.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/BELBIEN/belbien7.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/BELBIEN/belbien9.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/BELBIEN/belbien8.jpg" alt="Showroom" class="img-galeria"></div>
+            <div class="showroom-item"><img src="imagenes/3DWALL/3D19.jpg" alt="Showroom" class="img-galeria"></div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PROYECTOS DESTACADOS -->
+    <section id="proyectos" class="seccion-proyectos">
+        <div class="proyectos-header">
+            <h2>Proyectos Destacados</h2>
+        </div>
+        
+        <div class="carrusel-proyectos" id="carrusel-proyectos">
+            <div class="proyecto-item">
+                <img src="imagenes/3DWALL/3D15.jpg" alt="Casino Atlantic City" class="img-proyecto">
+                <div class="proyecto-overlay">
+                    <p class="proyecto-desc">Hoteles - Revestimiento acústico e iluminación</p>
+                    <a href="#" class="btn-ver-mas">Ver más <span>&rarr;</span></a>
+                </div>
+            </div>
+
+            <div class="proyecto-item">
+                <img src="imagenes/3DWALL/3D9.jpg" alt="Restaurante Central" class="img-proyecto">
+                <div class="proyecto-overlay">
+                    <p class="proyecto-desc">Bares y counter - Paneles de piedra y barras de cuarzo</p>
+                    <a href="#" class="btn-ver-mas">Ver más <span>&rarr;</span></a>
+                </div>
+            </div>
+
+            <div class="proyecto-item">
+                <img src="imagenes/3DWALL/3D1.jpg" alt="Hotel Marriott" class="img-proyecto">
+                <div class="proyecto-overlay">
+                    <p class="proyecto-desc">Restaurantes - Acabados de techo 3D</p>
+                    <a href="#" class="btn-ver-mas">Ver más <span>&rarr;</span></a>
+                </div>
+            </div>
+
+            <div class="proyecto-item">
+                <img src="imagenes/MIRROFLEX/mirroflex8.jpg" alt="Oficinas WeWork" class="img-proyecto">
+                <div class="proyecto-overlay">
+                    <p class="proyecto-desc">Casinos - Diseño de espacios abiertos</p>
+                    <a href="#" class="btn-ver-mas">Ver más <span>&rarr;</span></a>
+                </div>
+            </div>
+
+            <div class="proyecto-item">
+                <img src="imagenes/3DWALL/3D19.jpg" alt="Residencia de Playa" class="img-proyecto">
+                <div class="proyecto-overlay">
+                    <p class="proyecto-desc">Residencia  - Terrazas y acabados premium</p>
+                    <a href="#" class="btn-ver-mas">Ver más <span>&rarr;</span></a>
+                </div>
+            </div>
+
+            <div class="proyecto-item">
+                <img src="imagenes/3DWALL/3D12.jpg" alt="Centro Comercial" class="img-proyecto">
+                <div class="proyecto-overlay">
+                    <p class="proyecto-desc">Residencias - Paredes y techos</p>
+                    <a href="#" class="btn-ver-mas">Ver más <span>&rarr;</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL PANTALLA COMPLETA -->
+    <div id="modal-imagen" class="modal">
+        <span class="cerrar-modal">&times;</span>
+        <img class="modal-contenido" id="img-ampliada" src="" alt="Imagen ampliada">
+    </div>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/51949272258?text=Hola,%20vengo%20de%20la%20página%20web%20y%20quisiera%20pedir%20un%20presupuesto." class="btn-flotante-wa" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> Pide presupuesto
+    </a>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="footer-anina">
+        <div class="footer-container">
+            
+            <div class="footer-left">
+                <h2 class="footer-logo">ANINA</h2>
+                <p class="footer-direccion">Calle los robles 350 san Isidro piso 3<br>Lima, Perú</p>
+                <p class="footer-derechos">&copy; 2026 ANINA. Todos los derechos reservados.</p>
+            </div>
+
+            <div class="footer-right">
+                <div class="redes-sociales">
+                    <!-- Íconos de FontAwesome agregados aquí -->
+                    <a href="https://www.instagram.com/aninaperu?utm_source=qr" target="_blank" class="btn-red-social"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/spezialeperu?locale=es_LA" target="_blank" class="btn-red-social"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>               
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="js/script.js"></script>
+</body>
+</html>

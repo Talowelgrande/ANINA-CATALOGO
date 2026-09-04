@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIEDRA - Paneles 3D | ANINA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR SIMPLIFICADA (Para volver atrás) -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">ANINA</div>
+            <a href="index.html" class="btn-volver"><i class="fa-solid fa-arrow-left"></i> Volver al Catálogo</a>
+        </div>
+    </nav>
+
+    <!-- HERO DEL PRODUCTO (Imagen referencial + Descripción) -->
+    <header class="producto-detalle-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('imagenes/PIEDRA/piedra6.jpg');">
+        <div class="producto-hero-contenido">
+            <span class="marca-badge">PIEDRA</span>
+            <h1>Láminas de material de piedra natural, ligero y resistente</h1>
+            <p>Cuenta con un refuerzo de compuesto polimérico que aporta flexibilidad y resistencia a las láminas, manteniendo el peso al mínimo.</p>
+        </div>
+    </header>
+
+    <!-- CARRUSEL DE ACABADOS (Rectángulos) -->
+    <section class="seccion-acabados">
+        <h2>Acabados Disponibles</h2>
+        <div class="carrusel-rectangulos" id="carrusel-acabados">
+            <!-- Textura 1 -->
+            <div class="rectangulo-acabado">
+                <img src="imagenes/3DWALL/3D6.jpg" alt="Acabado Madera" class="img-textura">
+                <p>Cuarzo</p>
+            </div>
+            <!-- Textura 2 -->
+            <div class="rectangulo-acabado">
+                <img src="imagenes/3DWALL/piedra1.jpg" alt="Acabado Piedra" class="img-textura">
+                <p>Bizmuto</p>
+            </div>
+            <!-- Textura 3 -->
+            <div class="rectangulo-acabado">
+                <img src="imagenes/3DWALL/piedra2.jpg" alt="Acabado Metálico" class="img-textura">
+                <p>Piedra Caliza</p>
+            </div>
+            <!-- Textura 4 -->
+            <div class="rectangulo-acabado">
+                <img src="imagenes/3DWALL/piedra3.jpg" alt="Panel 3D Cuadrado" class="img-textura">
+                <p>Marmol</p>
+            </div>
+            <!-- Textura 5 -->
+            <div class="rectangulo-acabado">
+                <img src="imagenes/3DWALL/3D8.jpg" alt="Vinil" class="img-textura">
+                <p>Obsidiana</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA DE 8 MEJORES FOTOS -->
+    <section class="seccion-galeria-producto">
+        <h2>Galería de Proyectos PIEDRA</h2>
+        <div class="grid-8-fotos">
+            <!-- Ponemos la clase 'img-galeria' para que el visor de pantalla completa funcione automáticamente -->
+            <div class="foto-grid"><img src="imagenes/PIEDRA/piedra1.JPG" class="img-galeria" alt="Proyecto 1"></div>
+            <div class="foto-grid"><img src="imagenes/PIEDRA/piedra2.JPG" class="img-galeria" alt="Proyecto 2"></div>
+            <div class="foto-grid"><img src="imagenes/PIEDRA/piedra3.jpg" class="img-galeria" alt="Proyecto 3"></div>
+            <div class="foto-grid"><img src="imagenes/PIEDRA/piedra4.jpg" class="img-galeria" alt="Proyecto 4"></div>
+            <div class="foto-grid"><img src="imagenes/PIEDRA/piedra5.jpg" class="img-galeria" alt="Proyecto 5"></div>
+            <div class="foto-grid"><img src="imagenes/PIEDRA/piedra6.jpg" class="img-galeria" alt="Proyecto 6"></div>
+            <div class="foto-grid"><img src="imagenes/PIEDRA/piedra7.jpg" class="img-galeria" alt="Proyecto 7"></div>
+            <div class="foto-grid"><img src="imagenes/PIEDRA/piedra8.jpg" class="img-galeria" alt="Proyecto 8"></div>
+        </div>
+    </section>
+
+    <!-- MODAL PANTALLA COMPLETA (Reutilizado) -->
+    <div id="modal-imagen" class="modal">
+        <span class="cerrar-modal">&times;</span>
+        <img class="modal-contenido" id="img-ampliada" src="" alt="Imagen ampliada">
+    </div>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/51949272258?text=Hola,%20me%20interesa%20la%20linea%20PIEDRA%20y%20quisiera%20pedir%20un%20presupuesto." class="btn-flotante-wa" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> Cotizar PIEDRA
+    </a>
+
+    <!-- SCRIPT (Reutilizamos el mismo archivo) -->
+    <script src="js/script.js"></script>
+</body>
+</html>

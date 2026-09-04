@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BELBIEN - Paneles 3D | ANINA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR SIMPLIFICADA (Para volver atrás) -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">ANINA</div>
+            <a href="index.html" class="btn-volver"><i class="fa-solid fa-arrow-left"></i> Volver al Catálogo</a>
+        </div>
+    </nav>
+
+    <!-- HERO DEL PRODUCTO (Imagen referencial + Descripción) -->
+    <header class="producto-detalle-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('imagenes/imagen1.jpg');">
+        <div class="producto-hero-contenido">
+            <span class="marca-badge">BELBIEN</span>
+            <h1>Láminas de vinil, adaptables y sostenibles.</h1>
+            <p>Con una oferta de más de 680 acabados , Belbien puede instalarse en superficies planas y curvas, tanto en interiores como en exteriores incluyendo puertas, paneles de pared y techo, carpintería, columnas y más, lo que le permite renovar y reutilizar lo que ya tiene.</p>
+        </div>
+    </header>
+
+    <!-- CARRUSEL DE ACABADOS (Rectángulos) -->
+    <section class="seccion-acabados">
+        <h2>Acabados Disponibles</h2>
+        <div class="carrusel-rectangulos" id="carrusel-acabados">
+            <!-- Textura 1 -->
+            <div class="rectangulo-acabado">
+                <img src="imagenes/3DWALL/madera1.jpg" alt="Acabado Madera" class="img-textura">
+                <p>Pino</p>
+            </div>
+            <!-- Textura 2 -->
+            <div class="rectangulo-acabado">
+                <img src="imagenes/3DWALL/madera2.jpg" alt="Acabado Piedra" class="img-textura">
+                <p>Nogal</p>
+            </div>
+            <!-- Textura 3 -->
+            <div class="rectangulo-acabado">
+                <img src="imagenes/3DWALL/madera3.jpg" alt="Acabado Metálico" class="img-textura">
+                <p>Caoba</p>
+            </div>
+            <!-- Textura 4 -->
+            <div class="rectangulo-acabado">
+                <img src="imagenes/3DWALL/madera4.jpg" alt="Panel 3D Cuadrado" class="img-textura">
+                <p>Abedul</p>
+            </div>
+            <!-- Textura 5 -->
+            <div class="rectangulo-acabado">
+                <img src="imagenes/3DWALL/vinil10.jpg" alt="Vinil" class="img-textura">
+                <p>Cerezo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA DE 8 MEJORES FOTOS -->
+    <section class="seccion-galeria-producto">
+        <h2>Galería de Proyectos BELBIEN</h2>
+        <div class="grid-8-fotos">
+            <!-- Ponemos la clase 'img-galeria' para que el visor de pantalla completa funcione automáticamente -->
+            <div class="foto-grid"><img src="imagenes/BELBIEN/belbien1.jpg" class="img-galeria" alt="Proyecto 1"></div>
+            <div class="foto-grid"><img src="imagenes/BELBIEN/belbien2.jpg" class="img-galeria" alt="Proyecto 2"></div>
+            <div class="foto-grid"><img src="imagenes/BELBIEN/belbien3.jpg" class="img-galeria" alt="Proyecto 3"></div>
+            <div class="foto-grid"><img src="imagenes/BELBIEN/belbien4.jpg" class="img-galeria" alt="Proyecto 4"></div>
+            <div class="foto-grid"><img src="imagenes/BELBIEN/belbien5.jpg" class="img-galeria" alt="Proyecto 5"></div>
+            <div class="foto-grid"><img src="imagenes/BELBIEN/belbien6.jpg" class="img-galeria" alt="Proyecto 6"></div>
+            <div class="foto-grid"><img src="imagenes/BELBIEN/belbien7.jpg" class="img-galeria" alt="Proyecto 7"></div>
+            <div class="foto-grid"><img src="imagenes/BELBIEN/belbien8.jpg" class="img-galeria" alt="Proyecto 8"></div>
+        </div>
+    </section>
+
+    <!-- MODAL PANTALLA COMPLETA (Reutilizado) -->
+    <div id="modal-imagen" class="modal">
+        <span class="cerrar-modal">&times;</span>
+        <img class="modal-contenido" id="img-ampliada" src="" alt="Imagen ampliada">
+    </div>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/51949272258?text=Hola,%20me%20interesa%20la%20linea%20BELBIEN%20y%20quisiera%20pedir%20un%20presupuesto." class="btn-flotante-wa" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> Cotizar BELBIEN
+    </a>
+
+    <!-- SCRIPT (Reutilizamos el mismo archivo) -->
+    <script src="js/script.js"></script>
+</body>
+</html>

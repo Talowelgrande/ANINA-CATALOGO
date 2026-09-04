@@ -1,0 +1,995 @@
+/* =======================================================
+   ANINA PERÚ - CATÁLOGO PREMIUM
+   Hoja de Estilos Principal
+======================================================= */
+
+:root {
+    --color-acento: #2e7d32;
+    --color-texto-oscuro: #1a1a1a;
+    --color-gris-sidebar: #5a5a5a;
+    --color-fondo: #ffffff;
+}
+
+/* --- REGLA DE ORO: PREVENIR DESBORDAMIENTO HORIZONTAL --- */
+* {
+    box-sizing: border-box; /* Hace que el padding no aumente el tamaño del 100% */
+}
+
+html, body {
+    overflow-x: hidden; /* Corta de raíz cualquier elemento que intente salirse a la derecha */
+    width: 100%;
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Montserrat', sans-serif; 
+}
+
+/* --- REGLA GLOBAL: PREVENIR ARRASTRE NATIVO DE IMÁGENES --- */
+.img-galeria, .textura-img, .img-proyecto {
+    -webkit-user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* =======================================================
+   1. BARRA DE NAVEGACIÓN (HEADER)
+======================================================= */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 3000;
+    transition: background-color 0.4s ease;
+}
+
+#navbar.menu-open {
+    background-color: var(--color-gris-sidebar);
+    box-shadow: none;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-texto-oscuro);
+    transition: color 0.4s ease;
+}
+
+#navbar.menu-open .logo {
+    color: #ffffff;
+}
+
+.nav-links {
+    list-style: none; 
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+    margin: 0 0 0 40px; 
+    padding: 0;
+}
+
+.nav-links li a {
+    color: var(--color-texto-oscuro); 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover { 
+    color: var(--color-acento); 
+}
+
+.btn-cotiza {
+    background-color: var(--color-texto-oscuro);
+    color: #ffffff !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-cotiza:hover { 
+    background-color: var(--color-acento); 
+}
+
+.lang-toggle {
+    margin-left: auto; 
+    text-decoration: none;
+    color: var(--color-texto-oscuro);
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid var(--color-texto-oscuro);
+    padding: 5px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+#navbar.menu-open .lang-toggle {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* =======================================================
+   2. MENÚ HAMBURGUESA Y SIDEBAR
+======================================================= */
+.menu-toggle {
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    width: 25px;
+}
+
+.bar {
+    width: 100%; 
+    height: 3px; 
+    background-color: #888888; 
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: #ffffff; 
+}
+.menu-toggle.open .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: #ffffff;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--color-gris-sidebar);
+    z-index: 2000;
+    transition: left 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    overflow-y: auto;
+}
+
+.sidebar.active { left: 0; }
+
+.sidebar-links {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px;
+}
+
+.sidebar-links li a {
+    color: #ffffff; 
+    text-decoration: none; 
+    font-size: 16px; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    padding-left: 30px; 
+    display: block;
+}
+
+.sidebar-footer {
+    margin-top: 50px; 
+    margin-bottom: 40px;
+    display: flex; 
+    justify-content: center;
+    width: 100%; 
+}
+
+.btn-cotiza-sidebar {
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 12px 40px;
+    border-radius: 30px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    font-size: 14px; 
+    transition: all 0.3s ease;
+}
+
+.btn-cotiza-sidebar:hover {
+    background-color: #ffffff;
+    color: var(--color-gris-sidebar); 
+}
+
+/* =======================================================
+   3. PORTADA DINÁMICA (HERO)
+======================================================= */
+#hero {
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    background-color: #000;
+    position: relative; 
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 2s ease-in-out;
+    z-index: 1; 
+    opacity: 0; 
+}
+
+.hero-bg.active { opacity: 1; }
+
+.hero-content {
+    color: white; 
+    z-index: 2; 
+    position: relative; 
+    background: transparent;
+    padding: 40px; 
+    max-width: 800px;
+    margin-top: 50px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content h1 { 
+    font-size: 3.5rem; 
+    margin-bottom: 15px; 
+    letter-spacing: 1px; 
+}
+
+/* =======================================================
+   NUEVA SECCIÓN: NOVEDADES (Estilo Cosentino)
+======================================================= */
+.seccion-novedades {
+    background-color: #e9e9e9; /* Gris clarito de la imagen */
+    padding: 80px 40px;
+    width: 100%;
+}
+
+/* Cabecera, Controles y Barra de Progreso */
+.novedades-titulo-link {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #333;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.flecha-diagonal { font-size: 16px; }
+
+.novedades-controles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.progreso-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#contador-novedades {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.barra-fondo {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #cccccc; /* Línea gris inactiva */
+    position: relative;
+}
+
+.barra-activa {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 3px;
+    width: 25%; /* Empieza en un cuarto (01/04) */
+    background-color: #1a1a1a; /* Línea negra activa */
+    transition: width 0.3s ease;
+}
+
+.flechas-navegacion {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-flecha {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.btn-flecha:hover { color: #1a1a1a; }
+
+/* El Carrusel */
+.carrusel-novedades {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
+    scrollbar-width: none;
+}
+.carrusel-novedades::-webkit-scrollbar { display: none; }
+
+/* Las Tarjetas */
+.novedad-item {
+    flex: 0 0 105%;
+    max-width: 750px;
+    aspect-ratio: 16 / 10; /* Formato rectangular apaisado */
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: center;
+}
+
+.img-novedad {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    -webkit-user-drag: none;
+    transition: transform 0.6s ease;
+}
+.novedad-item:hover .img-novedad { transform: scale(1.05); }
+
+/* Textos sobre la imagen */
+.novedad-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.25); /* Ligero oscurecimiento global */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.novedad-marca {
+    color: #ffffff;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.novedad-titulo {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 300; /* Letra delgada y elegante */
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Botones inferiores en la tarjeta */
+.novedad-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.btn-mas {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: background 0.3s;
+}
+.btn-mas:hover { background: #ffffff; color: #000; }
+
+.tag-new {
+    background-color: #fcf4b6; /* Amarillo pálido de la imagen */
+    color: #000;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 12px;
+    text-transform: uppercase;
+}
+
+
+/* =======================================================
+   6. SECCIÓN SHOWROOMS (MOSAICO / FEED)
+======================================================= */
+.seccion-showrooms {
+    background-color: #ffffff;
+    padding: 100px 20px;
+    width: 100%;
+}
+
+.showrooms-header {
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.showrooms-header h2 {
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.btn-vista {
+    position: absolute;
+    right: 0;
+    background: transparent;
+    border: 2px solid #000000;
+    color: #000000;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-vista:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+.vista-mosaico::-webkit-scrollbar, 
+.vista-feed::-webkit-scrollbar {
+    display: none;
+}
+
+.vista-mosaico {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-columns: 280px;
+    grid-auto-flow: column;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+    scrollbar-width: none;
+}
+
+.vista-mosaico .showroom-item {
+    scroll-snap-align: start;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.vista-feed {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 20px;
+    scrollbar-width: none;
+}
+
+.vista-feed .showroom-item {
+    flex: 0 0 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    scroll-snap-align: center;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.showroom-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.vista-mosaico .showroom-item:hover img { transform: scale(1.05); }
+
+#contenedor-showrooms { cursor: grab; }
+
+/* =======================================================
+   7. SECCIÓN PROYECTOS DESTACADOS
+======================================================= */
+.seccion-proyectos {
+    background-color: #f4f4f4;
+    padding: 100px 0;
+    width: 100%;
+}
+
+.proyectos-header h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-texto-oscuro);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.carrusel-proyectos {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 40px;
+    cursor: grab;
+    scrollbar-width: none;
+}
+
+.carrusel-proyectos::-webkit-scrollbar { display: none; }
+
+.proyecto-item {
+    flex: 0 0 90%;
+    max-width: 550px;
+    aspect-ratio: 4 / 5; 
+    position: relative;
+    border-radius: 20px; 
+    overflow: hidden;
+    scroll-snap-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15); 
+}
+
+.img-proyecto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.proyecto-item:hover .img-proyecto { transform: scale(1.05); }
+
+.proyecto-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    padding: 50px 25px 25px 25px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    pointer-events: none;
+}
+
+.proyecto-desc {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.btn-ver-mas {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    pointer-events: auto;
+    transition: color 0.3s ease;
+}
+
+.btn-ver-mas:hover { color: var(--color-acento); }
+
+/* =======================================================
+   8. VISOR DE PANTALLA COMPLETA (MODAL)
+======================================================= */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 4000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-contenido {
+    margin: auto;
+    display: block;
+    width: 85%;
+    max-width: 900px;
+    max-height: 85vh;
+    object-fit: contain;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation: zoomModal 0.3s ease;
+}
+
+@keyframes zoomModal {
+    from { transform: translateY(-50%) scale(0.9); opacity: 0; }
+    to { transform: translateY(-50%) scale(1); opacity: 1; }
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #f1f1f1;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 1;
+}
+
+.cerrar-modal:hover { color: var(--color-acento); }
+
+/* =======================================================
+   9. FOOTER (PIE DE PÁGINA)
+======================================================= */
+.footer-anina {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    padding: 60px 0;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.footer-direccion {
+    font-size: 14px;
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.footer-derechos {
+    font-size: 12px;
+    color: #777777;
+    margin-top: 20px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.redes-sociales { display: flex; gap: 15px; }
+
+.btn-red-social {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px; /* Ajustado para los íconos de FontAwesome */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Tamaño circular/cuadrado */
+    height: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 50%; /* Ahora los íconos son círculos perfectos */
+    transition: all 0.3s ease;
+}
+
+.btn-red-social:hover {
+    background-color: #ffffff;
+    color: #2b2b2b;
+}
+
+.btn-contactar {
+    background-color: var(--color-texto-oscuro);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 12px 35px;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-contactar:hover {
+    background-color: #ffffff;
+    color: #2b2b2b;
+}
+
+/* =======================================================
+   10. MEDIA QUERIES (RESPONSIVE CELULARES)
+======================================================= */
+@media screen and (max-width: 768px) {
+    /* Navbar */
+    .nav-links { display: none; } 
+    .nav-container { padding: 0 20px; }
+    .menu-toggle { display: flex; }
+    
+    /* Hero */
+    .hero-content h1 { font-size: 2.2rem; }
+    
+    /* Showrooms */
+    .showrooms-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .btn-vista { position: static; }
+    .showrooms-header h2 { font-size: 1.8rem; }
+    .vista-mosaico { grid-auto-columns: 200px; }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center; 
+    }
+    .footer-right { align-items: center; }
+}
+
+/* =======================================================
+   BOTÓN FLOTANTE DE WHATSAPP GLOBAL
+======================================================= */
+.btn-flotante-wa {
+    position: fixed; /* Esto hace que te persiga al hacer scroll */
+    bottom: 30px;
+    right: 30px;
+    background-color: #fce86b; /* Mantenemos el amarillo premium */
+    color: #000000;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 15px 25px;
+    border-radius: 30px; /* Forma de píldora */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 9999; /* Siempre por encima de las fotos y el modal */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-flotante-wa:hover {
+    transform: translateY(-5px); /* Se levanta un poquito al pasar el mouse */
+    background-color: #fddb22;
+}
+
+.btn-flotante-wa i {
+    font-size: 22px; /* Ícono de WhatsApp ligeramente más grande */
+}
+
+/* En celulares lo hacemos un poquito más compacto */
+@media screen and (max-width: 768px) {
+    .btn-flotante-wa {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+
+
+/* =======================================================
+   NUEVA PÁGINA: DETALLE DE PRODUCTO (Ej. Minoflex)
+======================================================= */
+/* Botón volver arriba */
+.btn-volver {
+    margin-left: auto;
+    text-decoration: none;
+    color: var(--color-texto-oscuro);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+.btn-volver:hover { color: var(--color-acento); }
+
+/* Hero del Producto */
+.producto-detalle-hero {
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto parallax elegante */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 70px; /* Por la barra superior */
+}
+
+.producto-hero-contenido {
+    max-width: 800px;
+    color: #ffffff;
+}
+
+.marca-badge {
+    background-color: var(--color-acento);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.producto-hero-contenido h1 {
+    font-size: 3rem;
+    margin: 15px 0;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.producto-hero-contenido p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+/* Carrusel de Acabados (Rectángulos) */
+.seccion-acabados {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.seccion-acabados h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.carrusel-rectangulos {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 40px;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
+    scrollbar-width: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.carrusel-rectangulos::-webkit-scrollbar { display: none; }
+
+.rectangulo-acabado {
+    flex: 0 0 280px; /* Ancho del rectángulo */
+    scroll-snap-align: center;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.img-textura {
+    width: 100%;
+    height: 140px; /* Menos altura para que sea rectángulo */
+    object-fit: cover;
+    display: block;
+}
+
+.rectangulo-acabado p {
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Galería de 8 Fotos */
+.seccion-galeria-producto {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-galeria-producto h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.grid-8-fotos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 fotos por fila en PC */
+    gap: 15px;
+}
+
+.foto-grid {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.foto-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.foto-grid:hover img {
+    transform: scale(1.1);
+}
+
+/* Adaptación para Celulares de la nueva página */
+@media screen and (max-width: 768px) {
+    .producto-hero-contenido h1 { font-size: 2rem; }
+    .grid-8-fotos { grid-template-columns: repeat(2, 1fr); } /* 2 fotos por fila en celular */
+}
